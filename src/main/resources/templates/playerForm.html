@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit PlayerProfile</title>
+</head>
+<body>
+    <h1>Edit PlayerProfile</h1>
+    <form th:action="@{/players/save}" th:object="${player}" method="post">
+        <input type="hidden" th:field="*{playerId}" />
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" required />
+        <label>FullName:</label>
+        <input type="text" th:field="*{fullName}" required />
+        <label>Age:</label>
+        <input type="text" th:field="*{age}" required />
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
